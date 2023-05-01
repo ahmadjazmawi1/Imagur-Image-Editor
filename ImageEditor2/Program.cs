@@ -17,7 +17,6 @@ namespace ImageEditor2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 
         }
     }

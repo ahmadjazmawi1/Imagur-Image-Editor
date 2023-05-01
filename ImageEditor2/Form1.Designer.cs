@@ -28,28 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.insertImage = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.right90 = new System.Windows.Forms.Button();
+            this.left90 = new System.Windows.Forms.Button();
+            this.rotate180 = new System.Windows.Forms.Button();
+            this.flipVert = new System.Windows.Forms.Button();
+            this.flipHoriz = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(24, 111);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 137);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(928, 470);
+            this.pictureBox1.Size = new System.Drawing.Size(1292, 537);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -61,61 +57,7 @@
             this.insertImage.TabIndex = 1;
             this.insertImage.Text = "Insert image";
             this.insertImage.UseVisualStyleBackColor = true;
-            this.insertImage.Click += new System.EventHandler(this.insertImage);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Rotate right 90*",
-            "Rotate left 90*",
-            "Rotate 180*",
-            "Flip vertical",
-            "Flip Horizontal"});
-            this.comboBox1.Location = new System.Drawing.Point(216, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(186, 24);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.Text = "Rotate right 90*";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // bindingNavigator1
-            // 
-            this.bindingNavigator1.AddNewItem = null;
-            this.bindingNavigator1.CountItem = null;
-            this.bindingNavigator1.DeleteItem = null;
-            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigator1.MoveFirstItem = null;
-            this.bindingNavigator1.MoveLastItem = null;
-            this.bindingNavigator1.MoveNextItem = null;
-            this.bindingNavigator1.MovePreviousItem = null;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1292, 27);
-            this.bindingNavigator1.TabIndex = 3;
-            this.bindingNavigator1.Text = "bindingNavigator1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.insertImage.Click += new System.EventHandler(this.insert_Click);
             // 
             // openFileDialog1
             // 
@@ -123,32 +65,90 @@
             this.openFileDialog1.Tag = "hello";
             this.openFileDialog1.Title = "HELLO";
             // 
-            // splitContainer1
+            // label1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(630, 31);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Size = new System.Drawing.Size(150, 100);
-            this.splitContainer1.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(559, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Image Rotations";
+            // 
+            // right90
+            // 
+            this.right90.Location = new System.Drawing.Point(350, 55);
+            this.right90.Name = "right90";
+            this.right90.Size = new System.Drawing.Size(139, 23);
+            this.right90.TabIndex = 7;
+            this.right90.Text = "Rotate right 90*";
+            this.right90.UseVisualStyleBackColor = true;
+            this.right90.Click += new System.EventHandler(this.right90_Click);
+            // 
+            // left90
+            // 
+            this.left90.Location = new System.Drawing.Point(350, 95);
+            this.left90.Name = "left90";
+            this.left90.Size = new System.Drawing.Size(139, 23);
+            this.left90.TabIndex = 8;
+            this.left90.Text = "Rotate left 90*";
+            this.left90.UseVisualStyleBackColor = true;
+            this.left90.Click += new System.EventHandler(this.left90_Click);
+            // 
+            // rotate180
+            // 
+            this.rotate180.Location = new System.Drawing.Point(535, 55);
+            this.rotate180.Name = "rotate180";
+            this.rotate180.Size = new System.Drawing.Size(145, 23);
+            this.rotate180.TabIndex = 9;
+            this.rotate180.Text = "Rotate 180*";
+            this.rotate180.UseVisualStyleBackColor = true;
+            this.rotate180.Click += new System.EventHandler(this.rotate180_Click);
+            // 
+            // flipVert
+            // 
+            this.flipVert.Location = new System.Drawing.Point(535, 95);
+            this.flipVert.Name = "flipVert";
+            this.flipVert.Size = new System.Drawing.Size(145, 23);
+            this.flipVert.TabIndex = 10;
+            this.flipVert.Text = "Flip Vertical";
+            this.flipVert.UseVisualStyleBackColor = true;
+            this.flipVert.Click += new System.EventHandler(this.flipVert_Click);
+            // 
+            // flipHoriz
+            // 
+            this.flipHoriz.Location = new System.Drawing.Point(717, 54);
+            this.flipHoriz.Name = "flipHoriz";
+            this.flipHoriz.Size = new System.Drawing.Size(138, 23);
+            this.flipHoriz.TabIndex = 11;
+            this.flipHoriz.Text = "Flip Horizontal";
+            this.flipHoriz.UseVisualStyleBackColor = true;
+            this.flipHoriz.Click += new System.EventHandler(this.flipHoriz_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1044, 69);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1292, 686);
-            this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.flipHoriz);
+            this.Controls.Add(this.flipVert);
+            this.Controls.Add(this.rotate180);
+            this.Controls.Add(this.left90);
+            this.Controls.Add(this.right90);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.insertImage);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-            this.bindingNavigator1.ResumeLayout(false);
-            this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,12 +158,14 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button insertImage;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button right90;
+        private System.Windows.Forms.Button left90;
+        private System.Windows.Forms.Button rotate180;
+        private System.Windows.Forms.Button flipVert;
+        private System.Windows.Forms.Button flipHoriz;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
