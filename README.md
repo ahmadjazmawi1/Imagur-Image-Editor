@@ -4,11 +4,12 @@ Currently implemented features:
 
 * Importing an image
 * Rotating the image
-
-Features that will be implemented soon: 
-
 * Zooming in and out
 * Brush tool
+* Clear changes
+* 
+Features that will be implemented soon: 
+
 * Drawing Shapes
 * Filling the shapes with color
 * Undo and Redo
