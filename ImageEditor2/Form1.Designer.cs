@@ -54,6 +54,12 @@
             this.whiteColor = new System.Windows.Forms.PictureBox();
             this.redColor = new System.Windows.Forms.PictureBox();
             this.Clear = new System.Windows.Forms.Button();
+            this.pencil_btn = new System.Windows.Forms.Button();
+            this.Rect_btn = new System.Windows.Forms.Button();
+            this.Circle_btn = new System.Windows.Forms.Button();
+            this.Tri_btn = new System.Windows.Forms.Button();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.MenuItemGrayScale = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -78,10 +84,11 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1,
-            this.toolStripDropDownButton2});
+            this.toolStripDropDownButton2,
+            this.toolStripDropDownButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1184, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1184, 31);
             this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -95,27 +102,27 @@
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(46, 24);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(46, 28);
             this.toolStripDropDownButton1.Text = "File";
             // 
             // MenuItemOpen
             // 
             this.MenuItemOpen.Name = "MenuItemOpen";
-            this.MenuItemOpen.Size = new System.Drawing.Size(143, 26);
+            this.MenuItemOpen.Size = new System.Drawing.Size(224, 26);
             this.MenuItemOpen.Text = "Open";
             this.MenuItemOpen.Click += new System.EventHandler(this.MenuItemOpen_Click);
             // 
             // MenuItemSave
             // 
             this.MenuItemSave.Name = "MenuItemSave";
-            this.MenuItemSave.Size = new System.Drawing.Size(143, 26);
+            this.MenuItemSave.Size = new System.Drawing.Size(224, 26);
             this.MenuItemSave.Text = "Save";
             this.MenuItemSave.Click += new System.EventHandler(this.Save_Click);
             // 
             // MenuItemSaveas
             // 
             this.MenuItemSaveas.Name = "MenuItemSaveas";
-            this.MenuItemSaveas.Size = new System.Drawing.Size(143, 26);
+            this.MenuItemSaveas.Size = new System.Drawing.Size(224, 26);
             this.MenuItemSaveas.Text = "Save As";
             this.MenuItemSaveas.Click += new System.EventHandler(this.Saveas_Click);
             // 
@@ -137,35 +144,35 @@
             // MenuItemRotateRight90
             // 
             this.MenuItemRotateRight90.Name = "MenuItemRotateRight90";
-            this.MenuItemRotateRight90.Size = new System.Drawing.Size(197, 26);
+            this.MenuItemRotateRight90.Size = new System.Drawing.Size(224, 26);
             this.MenuItemRotateRight90.Text = "Rotate right 90*";
             this.MenuItemRotateRight90.Click += new System.EventHandler(this.MenuItemRotateRight90_Click);
             // 
             // MenuItemRotateLeft90
             // 
             this.MenuItemRotateLeft90.Name = "MenuItemRotateLeft90";
-            this.MenuItemRotateLeft90.Size = new System.Drawing.Size(197, 26);
+            this.MenuItemRotateLeft90.Size = new System.Drawing.Size(224, 26);
             this.MenuItemRotateLeft90.Text = "Rotate left 90*";
             this.MenuItemRotateLeft90.Click += new System.EventHandler(this.MenuItemRotateLeft90_Click);
             // 
             // MenuItemRotate180
             // 
             this.MenuItemRotate180.Name = "MenuItemRotate180";
-            this.MenuItemRotate180.Size = new System.Drawing.Size(197, 26);
+            this.MenuItemRotate180.Size = new System.Drawing.Size(224, 26);
             this.MenuItemRotate180.Text = "Rotate 180*";
             this.MenuItemRotate180.Click += new System.EventHandler(this.MenuItemRotate180_Click);
             // 
             // MenuItemFlipVertical
             // 
             this.MenuItemFlipVertical.Name = "MenuItemFlipVertical";
-            this.MenuItemFlipVertical.Size = new System.Drawing.Size(197, 26);
+            this.MenuItemFlipVertical.Size = new System.Drawing.Size(224, 26);
             this.MenuItemFlipVertical.Text = "Flip Vertical";
             this.MenuItemFlipVertical.Click += new System.EventHandler(this.MenuItemFlipVertical_Click);
             // 
             // MenuItemFlipHorizontal
             // 
             this.MenuItemFlipHorizontal.Name = "MenuItemFlipHorizontal";
-            this.MenuItemFlipHorizontal.Size = new System.Drawing.Size(197, 26);
+            this.MenuItemFlipHorizontal.Size = new System.Drawing.Size(224, 26);
             this.MenuItemFlipHorizontal.Text = "Flip Horizontal";
             this.MenuItemFlipHorizontal.Click += new System.EventHandler(this.MenuItemFlipHorizontal_Click);
             // 
@@ -196,6 +203,7 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
@@ -315,11 +323,82 @@
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
+            // pencil_btn
+            // 
+            this.pencil_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pencil_btn.Image = ((System.Drawing.Image)(resources.GetObject("pencil_btn.Image")));
+            this.pencil_btn.Location = new System.Drawing.Point(270, 38);
+            this.pencil_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.pencil_btn.Name = "pencil_btn";
+            this.pencil_btn.Size = new System.Drawing.Size(49, 42);
+            this.pencil_btn.TabIndex = 22;
+            this.pencil_btn.UseVisualStyleBackColor = true;
+            this.pencil_btn.Click += new System.EventHandler(this.pencil_btn_Click);
+            // 
+            // Rect_btn
+            // 
+            this.Rect_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Rect_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Rect_btn.Image = ((System.Drawing.Image)(resources.GetObject("Rect_btn.Image")));
+            this.Rect_btn.Location = new System.Drawing.Point(327, 38);
+            this.Rect_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Rect_btn.Name = "Rect_btn";
+            this.Rect_btn.Size = new System.Drawing.Size(49, 43);
+            this.Rect_btn.TabIndex = 23;
+            this.Rect_btn.UseVisualStyleBackColor = true;
+            this.Rect_btn.Click += new System.EventHandler(this.Rect_btn_Click);
+            // 
+            // Circle_btn
+            // 
+            this.Circle_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Circle_btn.Image = ((System.Drawing.Image)(resources.GetObject("Circle_btn.Image")));
+            this.Circle_btn.Location = new System.Drawing.Point(384, 38);
+            this.Circle_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Circle_btn.Name = "Circle_btn";
+            this.Circle_btn.Size = new System.Drawing.Size(49, 42);
+            this.Circle_btn.TabIndex = 24;
+            this.Circle_btn.UseVisualStyleBackColor = true;
+            this.Circle_btn.Click += new System.EventHandler(this.Circle_btn_Click);
+            // 
+            // Tri_btn
+            // 
+            this.Tri_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Tri_btn.Image = ((System.Drawing.Image)(resources.GetObject("Tri_btn.Image")));
+            this.Tri_btn.Location = new System.Drawing.Point(441, 38);
+            this.Tri_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Tri_btn.Name = "Tri_btn";
+            this.Tri_btn.Size = new System.Drawing.Size(49, 43);
+            this.Tri_btn.TabIndex = 25;
+            this.Tri_btn.UseVisualStyleBackColor = true;
+            this.Tri_btn.Click += new System.EventHandler(this.Tri_btn_Click);
+            // 
+            // toolStripDropDownButton3
+            // 
+            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemGrayScale});
+            this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
+            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(67, 24);
+            this.toolStripDropDownButton3.Text = "Effects";
+            // 
+            // MenuItemGrayScale
+            // 
+            this.MenuItemGrayScale.Name = "MenuItemGrayScale";
+            this.MenuItemGrayScale.Size = new System.Drawing.Size(224, 26);
+            this.MenuItemGrayScale.Text = "Gray Scale";
+            this.MenuItemGrayScale.Click += new System.EventHandler(this.MenuItemGrayScale_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 686);
+            this.Controls.Add(this.Tri_btn);
+            this.Controls.Add(this.Circle_btn);
+            this.Controls.Add(this.Rect_btn);
+            this.Controls.Add(this.pencil_btn);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
@@ -375,6 +454,12 @@
         private System.Windows.Forms.PictureBox whiteColor;
         private System.Windows.Forms.PictureBox redColor;
         private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Button pencil_btn;
+        private System.Windows.Forms.Button Rect_btn;
+        private System.Windows.Forms.Button Circle_btn;
+        private System.Windows.Forms.Button Tri_btn;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemGrayScale;
     }
 }
 
