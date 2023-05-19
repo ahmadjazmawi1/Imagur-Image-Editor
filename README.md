@@ -7,12 +7,15 @@ Currently implemented features:
 * Zooming in and out
 * Brush tool
 * Clear changes
-* 
-Features that will be implemented soon: 
-
 * Drawing Shapes
 * Filling the shapes with color
-* Undo and Redo
+* Undo
+* Gray Scale filter
+* Sepia filter
+* Invert Colors
+* Blur image
+Features that will be implemented soon: 
+* Redo
 
 Additional Features not in Paint: 
 
