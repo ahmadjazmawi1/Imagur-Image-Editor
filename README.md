@@ -14,6 +14,8 @@ Currently implemented features:
 * Sepia filter
 * Invert Colors
 * Blur image
+
+
 Features that will be implemented soon: 
 * Redo
 
